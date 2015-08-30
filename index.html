@@ -3,9 +3,9 @@
 <head>
     <title>Javascript Event KeyCode Finder</title>
     <script>
-    document.onkeydown = function(e) { document.getElementById('OnKeyDown').innerHTML = e.which; };
-    document.onkeyup = function(e) { document.getElementById('OnKeyUp').innerHTML = e.which; };
-    document.onkeypress = function(e) { document.getElementById('OnKeyPress').innerHTML = e.which; };
+        document.onkeydown = function(e) { document.getElementById('OnKeyDown').innerHTML = e.which; };
+        document.onkeyup = function(e) { document.getElementById('OnKeyUp').innerHTML = e.which; };
+        document.onkeypress = function(e) { document.getElementById('OnKeyPress').innerHTML = e.which; };
     </script>
     <style>
     body { background-color: black; }
@@ -40,15 +40,15 @@
             <tbody>
                 <tr>
                     <td>OnKeyDown</td>
-                    <td id="OnKeyDown"></td>
+                    <td id="OnKeyDown">0</td>
                 </tr>
                 <tr>
                     <td>OnKeyUp</td>
-                    <td id="OnKeyUp"></td>
+                    <td id="OnKeyUp">0</td>
                 </tr>
                 <tr>
                     <td>OnKeyPress</td>
-                    <td id="OnKeyPress"></td>
+                    <td id="OnKeyPress">0</td>
                 </tr>
             </tbody>
         </table>
