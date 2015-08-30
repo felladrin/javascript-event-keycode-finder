@@ -1,44 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Javascript Event KeyCode Finder</title>
-	<script>
-	document.onkeydown = function(e) { document.getElementById('OnKeyDown').innerHTML = e.which; };
-	document.onkeyup = function(e) { document.getElementById('OnKeyUp').innerHTML = e.which; };
-	document.onkeypress = function(e) { document.getElementById('OnKeyPress').innerHTML = e.which; };
-	</script>
-	<style>
-	body { background-color: black; }
-	div.container {
+    <title>Javascript Event KeyCode Finder</title>
+    <script>
+    document.onkeydown = function(e) { document.getElementById('OnKeyDown').innerHTML = e.which; };
+    document.onkeyup = function(e) { document.getElementById('OnKeyUp').innerHTML = e.which; };
+    document.onkeypress = function(e) { document.getElementById('OnKeyPress').innerHTML = e.which; };
+    </script>
+    <style>
+    body { background-color: black; }
+    div.container {
         font-size   : 30px;
         font-family : monospace;
-		color       : limegreen;
-		position    : absolute;
-		left        : 50%;
-		top         : 30%;
-		width       : 600px;
-		height      : 180px;
-		margin-left : -300px;
-		margin-top  : -90px;
-		text-align  : center;
-	}
-	div.container table {  margin: auto; }
-	div.container td { text-align: center; }
-	</style>
+        color       : limegreen;
+        position    : absolute;
+        left        : 50%;
+        top         : 30%;
+        width       : 600px;
+        height      : 180px;
+        margin-left : -300px;
+        margin-top  : -90px;
+        text-align  : center;
+    }
+    div.container table {  margin: auto; }
+    div.container td { text-align: center; }
+    </style>
 </head>
+
 <body>
-	<div class="container">
-		<h3>Javascript Event KeyCode Finder<br/>Press any key!</h3>
-		<table>
-			<thead>
-				<tr><th>Event</th><th>KeyCode</th></tr>
-			</thead>
-			<tbody>
-				<tr><td>OnKeyDown</td><td id="OnKeyDown"></td></tr>
-				<tr><td>OnKeyUp</td><td id="OnKeyUp"></td></tr>
-				<tr><td>OnKeyPress</td><td id="OnKeyPress"></td></tr>
-			</tbody>
-		</table>
-	</div>
+    <div class="container">
+        <h3>Javascript Event KeyCode Finder<br>Press any key!</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>KeyCode</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>OnKeyDown</td>
+                    <td id="OnKeyDown"></td>
+                </tr>
+                <tr>
+                    <td>OnKeyUp</td>
+                    <td id="OnKeyUp"></td>
+                </tr>
+                <tr>
+                    <td>OnKeyPress</td>
+                    <td id="OnKeyPress"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
