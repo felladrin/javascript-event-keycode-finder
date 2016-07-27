@@ -3,56 +3,93 @@
 <head>
     <title>Javascript Event KeyCode Finder</title>
     <script>
-        document.onkeydown = function(e) { document.getElementById('OnKeyDown').innerHTML = e.which; };
-        document.onkeyup = function(e) { document.getElementById('OnKeyUp').innerHTML = e.which; };
-        document.onkeypress = function(e) { document.getElementById('OnKeyPress').innerHTML = e.which; };
+        function ready(fn) {
+            if (document.readyState != 'loading')
+                fn();
+            else
+                document.addEventListener('DOMContentLoaded', fn);
+        }
+
+        ready(function () {
+            var onKeyDown = document.getElementById('OnKeyDown');
+            var onKeyUp = document.getElementById('OnKeyUp');
+            var onKeyPress = document.getElementById('OnKeyPress');
+
+            document.addEventListener('keydown', function (e) {
+                onKeyDown.innerHTML = e.which.toString();
+                onKeyPress.innerHTML = "N/A";
+
+                if (['8', '112', '114', '116', '117', '121', '122', '123'].indexOf(e.which.toString()) !== -1) {
+                    e.preventDefault(); // Prevent Google Chrome Function Keys.
+                }
+            });
+
+            document.addEventListener('keyup', function (e) {
+                onKeyUp.innerHTML = e.which.toString();
+            });
+
+            document.addEventListener('keypress', function (e) {
+                onKeyPress.innerHTML = e.which.toString();
+            });
+        });
     </script>
     <style>
-    body { background-color: black; }
-    div.container {
-        font-size   : 30px;
-        font-family : monospace;
-        color       : limegreen;
-        position    : absolute;
-        left        : 50%;
-        top         : 30%;
-        width       : 600px;
-        height      : 180px;
-        margin-left : -300px;
-        margin-top  : -90px;
-        text-align  : center;
-    }
-    div.container table {  margin: auto; }
-    div.container td { text-align: center; }
+        body {
+            background-color: black;
+        }
+
+        div.container {
+            font-size: 30px;
+            font-family: monospace;
+            color: limegreen;
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            width: 600px;
+            height: 180px;
+            margin-left: -300px;
+            margin-top: -90px;
+            text-align: center;
+        }
+
+        div.container table {
+            margin: auto;
+        }
+
+        div.container td {
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h3>Javascript Event KeyCode Finder<br>Press any key!</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Event</th>
-                    <th>KeyCode</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>OnKeyDown</td>
-                    <td id="OnKeyDown">0</td>
-                </tr>
-                <tr>
-                    <td>OnKeyUp</td>
-                    <td id="OnKeyUp">0</td>
-                </tr>
-                <tr>
-                    <td>OnKeyPress</td>
-                    <td id="OnKeyPress">0</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <a href='https://github.com/felladrin/javascript-event-keycode-finder' style='position:fixed;padding:5px 45px;width:128px;top:50px;right:-50px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);box-shadow:0 0 0 3px #27a027, 0 0 20px -3px rgba(0, 0, 0, 0.5);text-shadow:0 0 0 #ffffff, 0 0 5px rgba(0, 0, 0, 0.3);background-color:#27a027;color:#ffffff;font-size:13px;font-family:sans-serif;text-decoration:none;font-weight:bold;border:2px dotted #ffffff;-webkit-backface-visibility:hidden;letter-spacing:.5px;'>Fork me on GitHub</a></body>
+<div class="container">
+    <h3>Javascript Event KeyCode Finder<br>Press any key!</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>Event</th>
+            <th>KeyCode</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>OnKeyDown</td>
+            <td id="OnKeyDown">--</td>
+        </tr>
+        <tr>
+            <td>OnKeyUp</td>
+            <td id="OnKeyUp">--</td>
+        </tr>
+        <tr>
+            <td>OnKeyPress</td>
+            <td id="OnKeyPress">--</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<a href='https://github.com/felladrin/javascript-event-keycode-finder' style='position:fixed;padding:5px 45px;width:128px;top:50px;right:-50px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);box-shadow:0 0 0 3px #27a027, 0 0 20px -3px rgba(0, 0, 0, 0.5);text-shadow:0 0 0 #ffffff, 0 0 5px rgba(0, 0, 0, 0.3);background-color:#27a027;color:#ffffff;font-size:12px;font-family:sans-serif;text-decoration:none;font-weight:bold;border:2px dotted #ffffff;-webkit-backface-visibility:hidden;letter-spacing:1px;'>
+    Fork me on GitHub
+</a>
 </body>
 </html>
