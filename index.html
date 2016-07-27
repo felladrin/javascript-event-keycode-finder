@@ -1,38 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Javascript Event KeyCode Finder</title>
-    <script>
-        function ready(fn) {
-            if (document.readyState != 'loading')
-                fn();
-            else
-                document.addEventListener('DOMContentLoaded', fn);
-        }
-
-        ready(function () {
-            var onKeyDown = document.getElementById('OnKeyDown');
-            var onKeyUp = document.getElementById('OnKeyUp');
-            var onKeyPress = document.getElementById('OnKeyPress');
-
-            document.addEventListener('keydown', function (e) {
-                onKeyDown.innerHTML = e.which.toString();
-                onKeyPress.innerHTML = "N/A";
-
-                if (['8', '112', '114', '116', '117', '121', '122', '123'].indexOf(e.which.toString()) !== -1) {
-                    e.preventDefault(); // Prevent Google Chrome Function Keys.
-                }
-            });
-
-            document.addEventListener('keyup', function (e) {
-                onKeyUp.innerHTML = e.which.toString();
-            });
-
-            document.addEventListener('keypress', function (e) {
-                onKeyPress.innerHTML = e.which.toString();
-            });
-        });
-    </script>
+    <meta name="description" content="Simple tool to find out what's the keycode invoked by Javascript's OnKeyDown, OnKeyUp and OnKeyPress events.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Victor Nogueira">
+    <meta property="og:title" content="Javascript Event KeyCode Finder">
+    <meta property="og:url" content="https://felladrin.github.io/javascript-event-keycode-finder/">
+    <meta property="og:description" content="Simple tool to find out what's the keycode invoked by Javascript's OnKeyDown, OnKeyUp and OnKeyPress events.">
+    <meta property="og:type" content="website">
     <style>
         body {
             background-color: black;
@@ -61,7 +38,6 @@
         }
     </style>
 </head>
-
 <body>
 <div class="container">
     <h3>Javascript Event KeyCode Finder<br>Press any key!</h3>
@@ -75,21 +51,41 @@
         <tbody>
         <tr>
             <td>OnKeyDown</td>
-            <td id="OnKeyDown">--</td>
+            <td id="on-key-down">--</td>
         </tr>
         <tr>
             <td>OnKeyUp</td>
-            <td id="OnKeyUp">--</td>
+            <td id="on-key-up">--</td>
         </tr>
         <tr>
             <td>OnKeyPress</td>
-            <td id="OnKeyPress">--</td>
+            <td id="on-key-press">--</td>
         </tr>
         </tbody>
     </table>
 </div>
-<a href='https://github.com/felladrin/javascript-event-keycode-finder' style='position:fixed;padding:5px 45px;width:128px;top:50px;right:-50px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);box-shadow:0 0 0 3px #27a027, 0 0 20px -3px rgba(0, 0, 0, 0.5);text-shadow:0 0 0 #ffffff, 0 0 5px rgba(0, 0, 0, 0.3);background-color:#27a027;color:#ffffff;font-size:12px;font-family:sans-serif;text-decoration:none;font-weight:bold;border:2px dotted #ffffff;-webkit-backface-visibility:hidden;letter-spacing:1px;'>
-    Fork me on GitHub
-</a>
+<a href='https://github.com/felladrin/javascript-event-keycode-finder' style='position:fixed;padding:5px 45px;width:128px;top:50px;right:-50px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);box-shadow:0 0 0 3px #27a027, 0 0 20px -3px rgba(0, 0, 0, 0.5);text-shadow:0 0 0 #ffffff, 0 0 5px rgba(0, 0, 0, 0.3);background-color:#27a027;color:#ffffff;font-size:12px;font-family:sans-serif;text-decoration:none;font-weight:bold;border:2px dotted #ffffff;-webkit-backface-visibility:hidden;letter-spacing:1px;'>Fork me on GitHub</a>
+<script>
+    var onKeyDown = document.getElementById('on-key-down');
+    var onKeyUp = document.getElementById('on-key-up');
+    var onKeyPress = document.getElementById('on-key-press');
+
+    document.addEventListener('keydown', function (e) {
+        onKeyDown.innerHTML = e.which.toString();
+        onKeyPress.innerHTML = "N/A";
+
+        if (['8', '112', '114', '116', '117', '121', '122', '123'].indexOf(e.which.toString()) !== -1) {
+            e.preventDefault(); // Prevent Google Chrome Function Keys.
+        }
+    });
+
+    document.addEventListener('keyup', function (e) {
+        onKeyUp.innerHTML = e.which.toString();
+    });
+
+    document.addEventListener('keypress', function (e) {
+        onKeyPress.innerHTML = e.which.toString();
+    });
+</script>
 </body>
 </html>
